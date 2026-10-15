@@ -1,0 +1,191 @@
+{
+  "schema": 3,
+  "meta": {
+    "name": "Demo App",
+    "short_name": "DemoApp",
+    "version": "1.2.0",
+    "publisher": "Example Corp",
+    "url_info": "",
+    "url_update": "",
+    "url_readme": "",
+    "copyright": "(C) {YEAR} {PUBLISHER}. Все права защищены.",
+    "comments": "",
+    "build": "1",
+    "icon": "",
+    "license_file": "/workspace/vinstaller/examples/demo_app/license.txt",
+    "language": "ru",
+    "fallback_language": "en",
+    "multiuser": false
+  },
+  "setup": {
+    "default_dir": "C:\\Program Files\\{APPNAME}",
+    "exec_level": "auto",
+    "arch": "x86",
+    "allow_root": false,
+    "check_mutex": true,
+    "detect_old_version": true,
+    "upgrade_mode": "ask",
+    "close_apps": [],
+    "requires": {
+      "vc_redist": false,
+      "dotnet": "",
+      "os_min": ""
+    },
+    "custom_ini": {}
+  },
+  "compression": {
+    "method": "lzma",
+    "solid": true,
+    "dict_mb": 8
+  },
+  "ui": {
+    "style": "mui2",
+    "wizard": "modern",
+    "colors": {
+      "wnd_bg": "#FFFFFF",
+      "header_bg": "#5B9BD5",
+      "header_fg": "#FFFFFF",
+      "sidebar_bg": "#5B9BD5",
+      "sidebar_bg2": "#2E6DA4",
+      "sidebar_fg": "#FFFFFF",
+      "selection_color": "#5B9BD5",
+      "button_color": "#5B9BD5",
+      "progress_color": "#5B9BD5",
+      "text_color": "#000000"
+    },
+    "header_image": [
+      "",
+      ""
+    ],
+    "sidebar_image": [
+      "",
+      ""
+    ],
+    "use_custom_images": true,
+    "license_mode": "checkbox",
+    "misc_buttons": [
+      "< Назад",
+      "Далее >",
+      "Отмена",
+      "Готово"
+    ],
+    "branding": "{APPNAME} • {PUBLISHER}",
+    "completed_text": "",
+    "window_icon": true,
+    "details_show": "hide",
+    "rtl": false,
+    "space_texts": true
+  },
+  "pages": {
+    "welcome": true,
+    "license": true,
+    "components": true,
+    "directory": true,
+    "verify": false,
+    "instfiles": true,
+    "finish": true,
+    "uninstall_confirm": true,
+    "uninstall_finish": true
+  },
+  "install_types": [
+    {
+      "id": 0,
+      "name": "Полная",
+      "sections": "*"
+    },
+    {
+      "id": 1,
+      "name": "Типичная",
+      "sections": "main,shortcuts"
+    },
+    {
+      "id": 2,
+      "name": "Минимальная",
+      "sections": "main"
+    }
+  ],
+  "sections": [
+    {
+      "id": "main",
+      "name": "{APPNAME}",
+      "size_kb": 0,
+      "flags": "RO",
+      "types": [
+        0,
+        1,
+        2
+      ],
+      "files": [
+        {
+          "src": "/workspace/vinstaller/examples/demo_app/MyApp.exe",
+          "dest": "",
+          "kind": "exe"
+        },
+        {
+          "src": "/workspace/vinstaller/examples/demo_app/readme.txt",
+          "dest": "docs",
+          "kind": "file"
+        }
+      ],
+      "folders": []
+    },
+    {
+      "id": "shortcuts",
+      "name": "Ярлыки",
+      "size_kb": 0,
+      "flags": "",
+      "types": [
+        0,
+        1
+      ],
+      "files": [],
+      "folders": []
+    }
+  ],
+  "shortcuts": [
+    {
+      "section": "shortcuts",
+      "where": "startmenu",
+      "name": "{APPNAME}",
+      "target": "{EXE}",
+      "args": "",
+      "icon": "",
+      "icon_index": 0,
+      "description": ""
+    },
+    {
+      "section": "shortcuts",
+      "where": "desktop",
+      "name": "{APPNAME}",
+      "target": "{EXE}",
+      "args": "",
+      "icon": "",
+      "icon_index": 0,
+      "description": ""
+    }
+  ],
+  "file_ops": {
+    "dirs": [
+      "data",
+      "logs"
+    ],
+    "delete_files": []
+  },
+  "registry": {
+    "entries": []
+  },
+  "run": {
+    "install_exec": [],
+    "uninstall_exec": [],
+    "startup_run": ""
+  },
+  "scripts": {
+    "pre_init": "",
+    "leave_directory": "",
+    "custom_function": "",
+    "uninstall_custom": ""
+  },
+  "output": {
+    "filename": "{APPNAME}-{VERSION}-setup.exe"
+  }
+}

@@ -410,7 +410,7 @@ def parse_args(argv=None):
     ap.add_argument("--target", choices=["auto", "windows", "linux"], default="auto",
                     help="целевая ОС (влияет на расширение выхода и подсказки)")
     ap.add_argument("--entry", default=ENTRY_GUI, help="входной скрипт (GUI по умолчанию)")
-    ap.add_argument("--with-cli-tool", action="store_true", help="дополнительно собрать вик CLI vic-cli как второй EXE")
+    ap.add_argument("--with-cli-tool", action="store_true", help="дополнительно собрать CLI-утилиту вторым EXE (точка входа --entry)")
     return ap.parse_args(argv)
 
 
@@ -457,7 +457,7 @@ def main(argv=None):
     if not host_is_windows() and args.target == "auto":
         warn("Сборка идёт не на Windows: PyInstaller создаст бинарник для текущей ОС.")
         warn("Для настоящего vInstallerCreator.exe запустите CREATE.py на Windows")
-        warn("(или используйте GitHub Actions/windows-latest — workflow прилагается).")
+        warn("(или используйте GitHub Actions windows-latest — готовый workflow в README).")
 
     os.makedirs(BUILD_DIR, exist_ok=True)
     os.makedirs(DIST_DIR, exist_ok=True)
